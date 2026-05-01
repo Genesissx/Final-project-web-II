@@ -1,0 +1,45 @@
+.nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #0f1c14;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0 14px;
+  z-index: 100;
+  border-top: 1px solid rgba(255,255,255,.07);
+
+}
+
+.nav-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255,255,255,.4);
+  text-decoration: none;
+  font-size: .62rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: color .2s;
+  cursor: pointer;
+}
+
+
+
+.nav-plus {
+  background: #1a7a4a;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: -18px;
+  box-shadow: 0 4px 16px rgba(26,122,74,.5);
+  transition: background .2s, transform .2s;
+}
+.nav-plus:hover {
+  background: #c9933a;
+  transform: scale(1.08);
+}
