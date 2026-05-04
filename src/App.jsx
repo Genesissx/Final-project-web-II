@@ -4,8 +4,8 @@ import Home from "./Components/Home";
 import Search from "./pages/Search";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
-import Detail from "./pages/detail";
-import Terms from "./pages/terms";
+import Detail from "./pages/Detail";
+import Terms from "./pages/Terms";
 
 import Contact from "./pages/Contact";
 import Ajouter from "./pages/Ajouter";
