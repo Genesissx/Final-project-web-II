@@ -21,8 +21,17 @@
   font-size: .62rem;
   letter-spacing: .06em;
   text-transform: uppercase;
-  transition: color .2s;
+  transition: color .2s, transform .2s, background .2s;
   cursor: pointer;
+  padding: 8px 6px;
+  border-radius: 14px;
+}
+
+.nav-1:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 
