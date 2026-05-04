@@ -27,9 +27,9 @@ export default function Footer() {
         <span>Contact</span>
       </Link>
 
-      <Link to="/" className="nav-1">
+      <Link to="/About" className="nav-1">
         <User size={22} />
-        <span>Profil</span>
+        <span>About</span>
       </Link>
 
     </nav>

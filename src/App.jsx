@@ -6,7 +6,7 @@ import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import Detail from "./pages/Detail";
 import Terms from "./pages/terms";
-
+import About from "./pages/About"
 import Contact from "./pages/Contact";
 import Ajouter from "./pages/Ajouter";
 
@@ -19,7 +19,7 @@ function AppContent() {
     <>
       <Routes>
         <Route path="/" element={<LogIn />} />
-        <Route path="/login" element={<LogIn />} />
+        <Route path="/About" element={<About />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         <Route path="/Home" element={<Home />} />
