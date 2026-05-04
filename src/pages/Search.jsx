@@ -1,5 +1,4 @@
-import { FaArrowLeft } from "react-icons/fa";
-import React, { useState } from "react";
+import { useState } from "react";
 import ServiceCard from "../Components/ServiceCard";
 import { getAllServices } from "../data/services";
 import "./Search.css";

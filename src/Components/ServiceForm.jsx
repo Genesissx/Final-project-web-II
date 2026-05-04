@@ -1,5 +1,5 @@
 ﻿import "./serviceform.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { User, Briefcase, Phone, MapPin, FileText, Camera, Send } from "lucide-react";
 
 const DEFAULT_AVATAR =
