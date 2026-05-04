@@ -8,7 +8,7 @@ export default function Contact(){
         <div className="contact">
            
              <div className="title-contact">
-                <Link to={"/Contact"}><h2  className="icon"><FaArrowLeft/> Retour</h2></Link>
+                <Link to={"/Home"}><h2  className="icon"><FaArrowLeft/> Retour</h2></Link>
                 <h1>Contacter nous</h1>
                 <p>Comment pouvons-nous améliorer votre expérience ?</p>
             </div>
