@@ -34,9 +34,9 @@ export default function Contact(){
               Envoyer le message
           </button>
          </div>
-          <div class="contact-band">
-    <p>Une question, une suggestion ou besoin d'aide ? Écrivez-nous, nous vous répondons rapidement.</p>
-  </div>
+          <div className="contact-band">
+            <p>Une question, une suggestion ou besoin d'aide ? Écrivez-nous, nous vous répondons rapidement.</p>
+          </div>
         </div>
         </div>
         </>
