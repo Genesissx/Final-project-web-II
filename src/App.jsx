@@ -5,7 +5,7 @@ import Search from "./pages/Search";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import Detail from "./pages/Detail";
-import Terms from "./pages/Terms";
+import Terms from "./pages/terms";
 
 import Contact from "./pages/Contact";
 import Ajouter from "./pages/Ajouter";
