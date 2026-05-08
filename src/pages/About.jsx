@@ -1,4 +1,5 @@
 import "./about.css"
+import { Link } from "react-router-dom";
 import { FaCircle } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 export default function About(){
@@ -7,7 +8,7 @@ export default function About(){
         <section className="hero">
              <section className="hero-1">
     <div className="hero-retour">SC</div>
-         <h2  className="icon"><FaArrowLeft/> Retour</h2>
+        <Link to="/Profil"> <h2  className="icon"><FaArrowLeft/> Retour</h2></Link>
     <div className="fonde">Fondé en 2026 · Haïti</div>
     <h1>Connecter les talents<br/>aux <em>besoins réels</em></h1>
     <p className="hero-para">Service Connect rapproche rapidement les personnes qui cherchent un service fiable et les professionnels compétents qui cherchent des opportunités de travail.</p>

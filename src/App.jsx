@@ -9,6 +9,7 @@ import Terms from "./pages/terms";
 import About from "./pages/About"
 import Contact from "./pages/Contact";
 import Ajouter from "./pages/Ajouter";
+import Profil from "./pages/Profil"
 
 function AppContent() {
   const location = useLocation();
@@ -19,7 +20,7 @@ function AppContent() {
     <>
       <Routes>
         <Route path="/" element={<LogIn />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/Profil" element={<Profil />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         <Route path="/Home" element={<Home />} />
@@ -29,6 +30,7 @@ function AppContent() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Ajouter" element={<Ajouter />} />
         <Route path="*" element={<LogIn />} />
+         <Route path="/About" element={<About />} />
       </Routes>
       {showFooter && <Footer />}
     </>
