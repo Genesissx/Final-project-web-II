@@ -3,6 +3,7 @@
   min-height: 100vh;
   padding: 16px;
   padding-bottom: 80px; 
+    padding-top: 80px;
 }
 
 /* HEADER */
@@ -12,16 +13,35 @@
   margin-bottom: 8px;
 }
 
-.home-header h1 .highlight {
-  color: #1a7a4a;
-}
+
 
 .home-description {
   color: #5a6b5e;
   max-width: 720px;
   line-height: 1.7;
   margin-bottom: 24px;
+  padding-top: 70px;
 }
+
+.search-container {
+  margin-bottom: 18px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  font-family: "DM Sans", sans-serif;
+  outline: none;
+  background: white;
+  color: #0f1c14;
+}
+
+.search-container input:focus {
+  border-color: #1a7a4a;
+}
+
 
 .services-preview h2 {
   margin-bottom: 16px;

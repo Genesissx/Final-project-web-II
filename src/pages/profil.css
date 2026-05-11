@@ -5,6 +5,7 @@
   padding-bottom: 100px;
   max-width: 480px;
   margin: 0 auto;
+  padding-top: 180px;
 }
 
 
@@ -80,7 +81,7 @@
   font-weight: 600;
 }
 
-/* STATS */
+
 .profil-stats {
   display: flex;
   align-items: center;
@@ -125,7 +126,7 @@
   margin-bottom: 8px;
 }
 
-/* MENU */
+
 .profil-menu {
   background: #ffffff;
   border-radius: 16px;
