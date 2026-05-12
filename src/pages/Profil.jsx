@@ -8,15 +8,11 @@ export default function Profil() {
   return (
     <div className="profil-page">
 
-      <div className="profil-header">
-        <h1 className="profil-header-title">Profil</h1>
-        <button className="profil-settings-btn">
-          <Settings size={20} />
-        </button>
-      </div>
+   
 
      
       <div className="profil-card">
+        
         <div className="profil-user-info">
           <img
             src="https://i.pravatar.cc/80?img=3"
