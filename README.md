@@ -11,6 +11,32 @@ Currently, two official plugins are available:
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
+## Supabase integration
+
+This project can connect to Supabase to store users and services rather than using local mock data.
+
+1. Create a `.env.local` file at the project root.
+2. Add the following keys:
+
+```env
+VITE_SUPABASE_URL=https://utrheujwbxumlncvbsux.supabase.co
+VITE_SUPABASE_ANON_KEY=your_anon_public_key_here
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Run the app:
+
+```bash
+npm run dev
+```
+
+5. In Supabase, create the tables `profiles` and `services` if you want to store metadata and service listings.
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

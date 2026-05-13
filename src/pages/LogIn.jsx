@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmail, signInWithGoogle } from "../lib/firebaseClient";
 import "./LogIn.css";
 
 function EyeIcon({ open }) {
@@ -57,19 +58,74 @@ export default function LogIn() {
     return nextErrors;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const nextErrors = validate();
     if (Object.keys(nextErrors).length) {
       setErrors(nextErrors);
       return;
     }
-    showToast("Connexion réussie !", "success");
-    setTimeout(() => navigate("/home"), 900);
+
+    try {
+      const { data, error } = await signInWithEmail(email.trim(), password);
+      
+      if (error) {
+        console.error('Erreur connexion complète:', error);
+        
+        let errorMessage = "Erreur de connexion";
+        const errorCode = error.code || error.message || "";
+        
+        if (errorCode.includes('invalid-credential') || errorCode.includes('INVALID_LOGIN_CREDENTIALS')) {
+          errorMessage = "Email ou mot de passe incorrect";
+        } else if (errorCode.includes('user-not-found')) {
+          errorMessage = "Email non trouvé";
+        } else if (errorCode.includes('wrong-password')) {
+          errorMessage = "Mot de passe incorrect";
+        } else if (errorCode.includes('invalid-email')) {
+          errorMessage = "Email invalide";
+        } else if (errorCode.includes('user-disabled')) {
+          errorMessage = "Compte désactivé";
+        } else if (error.message) {
+          errorMessage = error.message;
+        }
+        
+        console.log("Message d'erreur affiché:", errorMessage);
+        showToast(errorMessage, "error");
+        return;
+      }
+
+      if (data?.user) {
+        showToast("Connexion réussie !", "success");
+        setTimeout(() => navigate("/home"), 900);
+        return;
+      }
+
+      showToast("Connexion échouée", "error");
+    } catch (unexpectedError) {
+      console.error('Erreur inattendue:', unexpectedError);
+      showToast("Une erreur est survenue", "error");
+    }
   };
 
-  const handleGoogleSignIn = () => {
-    showToast("Connexion Google réussie !", "success");
-    setTimeout(() => navigate("/home"), 900);
+  const handleGoogleSignIn = async () => {
+    try {
+      const { data, error } = await signInWithGoogle();
+      if (error) {
+        console.error('Erreur Google:', error.message);
+        setToast(error.message || "Erreur connexion Google", "error");
+        return;
+      }
+
+      if (data?.user) {
+        showToast("Connexion Google réussie !", "success");
+        setTimeout(() => navigate("/home"), 900);
+        return;
+      }
+
+      setToast("Connexion Google échouée", "error");
+    } catch (unexpectedError) {
+      console.error('Erreur inattendue Google:', unexpectedError);
+      setToast("Une erreur est survenue", "error");
+    }
   };
 
   const handleEmailChange = (value) => {

@@ -5,9 +5,13 @@ import { addService } from "../data/services";
 export default function Ajouter() {
   const navigate = useNavigate();
 
-  const handleAdd = (service) => {
-    addService(service);
-    setTimeout(() => navigate("/search"), 2600);
+  const handleAdd = async (service) => {
+    try {
+      await addService(service);
+      navigate("/search");
+    } catch (error) {
+      console.error("Erreur lors de l'ajout du service :", error.message);
+    }
   };
 
   return <ServiceForm onAdd={handleAdd} />;
