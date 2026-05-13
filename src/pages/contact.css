@@ -3,6 +3,7 @@
   background-color: #f5f0e8;
   color: #0f1c14;
   padding-bottom: 80px;
+    padding-top: 80px;
 }
 
 .title-contact {
@@ -38,21 +39,7 @@
   position: relative;
 }
 
-.icon {
-  position: absolute;
-  top: 28px;
-  left: 36px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,.55);
-  font-size: .85rem;
-  text-decoration: none;
-  letter-spacing: .08em;
-  transition: color .25s;
-}
 
-.icon:hover { color: #c9933a; }
 
 .form-card {
   background-color: #ffffff;

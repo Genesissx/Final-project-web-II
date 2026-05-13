@@ -79,10 +79,7 @@ export default function ServiceForm({ onAdd }) {
 
   return (
     <div className="service">
-      <div className="service-text">
-        <p className="service1">Service Connect</p>
-        <h1 className="service-title">Ajouter un Service</h1>
-      </div>
+     
 
       <div className="form-sections">
         <form onSubmit={handleSubmit}>

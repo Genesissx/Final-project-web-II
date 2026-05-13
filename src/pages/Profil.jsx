@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Settings, ChevronRight, Globe, Moon, HelpCircle, Info, LogOut, ShieldCheck } from 'lucide-react'
 import './Profil.css'
-import { Link } from "react-router-dom";
 
 export default function Profil() {
   const [darkMode, setDarkMode] = useState(false)
@@ -10,15 +9,10 @@ export default function Profil() {
     <div className="profil-page">
 
    
-      <div className="profil-header">
-        <h1 className="profil-header-title">Profil</h1>
-        <button className="profil-settings-btn">
-          <Settings size={20} />
-        </button>
-      </div>
 
      
       <div className="profil-card">
+        
         <div className="profil-user-info">
           <img
             src="https://i.pravatar.cc/80?img=3"
@@ -35,7 +29,7 @@ export default function Profil() {
           </div>
         </div>
 
-       
+        
         <div className="profil-stats">
           <div className="profil-stat-item">
             <span className="profil-stat-num">12</span>
@@ -49,7 +43,7 @@ export default function Profil() {
         </div>
       </div>
 
-    
+     
       <div className="profil-section-title">Paramètres</div>
 
       <div className="profil-menu">
@@ -115,19 +109,19 @@ export default function Profil() {
             <div className="profil-menu-icon">
               <Info size={18} color="#1a7a4a" />
             </div>
-            <Link to="/About"><span>À propos</span></Link>
+            <span>À propos</span>
           </div>
           <ChevronRight size={18} color="#aaa" />
         </button>
 
       </div>
 
-     
-      <Link to={"/LogIn"}><button className="profil-logout-btn">
+    
+      <button className="profil-logout-btn">
         <LogOut size={18} color="#e53e3e" />
         Se déconnecter
       </button>
-</Link>
+
     </div>
   )
 }
