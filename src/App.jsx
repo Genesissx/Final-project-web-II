@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Footer from "./Components/Footer";
+import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 import Search from "./pages/Search";
 import LogIn from "./pages/LogIn";
@@ -18,7 +18,9 @@ function AppContent() {
 
   return (
     <>
+        <NavBar />
       <Routes>
+         
         <Route path="/" element={<LogIn />} />
         <Route path="/Profil" element={<Profil />} />
         <Route path="/signup" element={<SignUp />} />
@@ -32,7 +34,7 @@ function AppContent() {
         <Route path="*" element={<LogIn />} />
          <Route path="/About" element={<About />} />
       </Routes>
-      {showFooter && <Footer />}
+      {/* {showFooter && <Footer />} */}
     </>
   );
 }
