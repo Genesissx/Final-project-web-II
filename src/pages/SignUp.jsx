@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { signUpWithEmail, signInWithGoogle } from "../lib/firebaseClient";
 import "./SignUp.css";
 
 function EyeIcon({ open }) {
@@ -129,19 +130,61 @@ export default function SignUp() {
     setStep(2);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    console.log("handleSubmit appelé");
     const nextErrors = validateStep2();
+    console.log("Erreurs de validation step 2 :", nextErrors);
+    
     if (Object.keys(nextErrors).length) {
+      console.log("Erreurs détectées, affichage des erreurs");
       setErrors(nextErrors);
+      showToast("Veuillez corriger les erreurs du formulaire", "error");
       return;
     }
-    showToast("Compte créé avec succès !", "success");
-    setTimeout(() => navigate("/home"), 900);
+
+    console.log("Validation OK, envoi de l'inscription");
+    try {
+      const { data, error } = await signUpWithEmail(form.email.trim(), form.password, {
+        firstName: form.firstName,
+        lastName: form.lastName,
+        nifcin: form.nifcin,
+        phone: form.phone,
+      });
+
+      console.log("Réponse Firebase - data:", data, "error:", error);
+
+      if (error) {
+        console.error("Erreur Firebase :", error);
+        setToast(error.message || "Erreur lors de l'inscription", "error");
+        return;
+      }
+
+      if (data?.user) {
+        showToast("Compte créé avec succès !", "success");
+        setTimeout(() => navigate("/login"), 1200);
+        return;
+      }
+
+      showToast("Inscription en cours...", "success");
+    } catch (unexpectedError) {
+      console.error('Erreur inscription inattendue :', unexpectedError);
+      setToast("Une erreur est survenue lors de l'inscription.", "error");
+    }
   };
 
-  const handleGoogleSignUp = () => {
-    showToast("Inscription Google réussie !", "success");
-    setTimeout(() => navigate("/home"), 900);
+  const handleGoogleSignUp = async () => {
+    const { data, error } = await signInWithGoogle();
+    if (error) {
+      setToast(error.message, "error");
+      return;
+    }
+
+    if (data?.url) {
+      window.location.href = data.url;
+      return;
+    }
+
+    showToast("Redirection vers Google...", "success");
   };
 
   const strength = passwordStrength(form.password);

@@ -130,6 +130,7 @@ export default function ServiceForm({ onAdd }) {
               <option value="Réparation">Réparation</option>
               <option value="Serrurier">Serrurier</option>
               <option value="Cuisine">Cuisine</option>
+              <option value="Jardinage">Jardinage</option>
               <option value="Garde d'enfant">Garde d'enfant</option>
               <option value="Community manager">Community manager</option>
             </select>

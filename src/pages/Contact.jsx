@@ -1,13 +1,14 @@
 import "./contact.css"
 import { FaArrowLeft } from "react-icons/fa";
 import {Send } from 'lucide-react'
+import { Link } from "react-router-dom";
 export default function Contact(){
     return(
         <>
         <div className="contact">
            
              <div className="title-contact">
-                <h2  className="icon"><FaArrowLeft/> Retour</h2>
+                <Link to={"/Home"}><h2  className="icon"><FaArrowLeft/> Retour</h2></Link>
                 <h1>Contacter nous</h1>
                 <p>Comment pouvons-nous améliorer votre expérience ?</p>
             </div>
