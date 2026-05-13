@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Settings, ChevronRight, Globe, Moon, HelpCircle, Info, LogOut, ShieldCheck } from 'lucide-react'
-import './Profil.css'
+import "./profil.css"
 
 export default function Profil() {
   const [darkMode, setDarkMode] = useState(false)

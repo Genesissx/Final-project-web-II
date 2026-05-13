@@ -1,36 +1,30 @@
 import ServiceCard from "./ServiceCard";
 import services from "../data/services";
-import { useState } from "react";
-
 import "./Home.css";
 
 const Home = () => {
-    const [search, setSearch] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState("");
+  // Grouper les services par catégorie
+  const categories = services.reduce((acc, service) => {
+    const cat = service.category || "Autres";
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(service);
+    return acc;
+  }, {});
+
   return (
     <div className="home-page">
-      <header className="home-header">
-        <p className="home-description">
-          Trouvez rapidement un prestataire fiable près de chez vous.
-        </p>
-        <div className="search-container">
-        <input
-          type="text"
-          placeholder="Rechercher un service, spécialisation ou lieu..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+      <div className="home-container">
+        {Object.entries(categories).map(([categoryName, categoryServices]) => (
+          <section key={categoryName} className="services-section">
+            <h2 className="section-title">{categoryName}</h2>
+            <div className="services-grid">
+              {categoryServices.map((service) => (
+                <ServiceCard key={service.id} service={service} />
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
-      </header>
-
-      <section className="services-preview">
-        <h2>Services recommandés</h2>
-        <div className="services-container">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-        </div>
-      </section>
     </div>
   );
 };

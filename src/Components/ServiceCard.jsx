@@ -5,21 +5,13 @@ const DEFAULT_AVATAR =
 
 export default function ServiceCard({ service }) {
   return (
-    <Link to={`/detail/${service.id}`} className="employee-card">
-      <div className="employee-card-avatar">
+    <Link to={`/detail/${service.id}`} className="service-card-v2">
+      <div className="service-card-image">
         <img src={service.avatar || DEFAULT_AVATAR} alt={service.name} />
       </div>
-      <div className="employee-card-content">
-        <div className="employee-card-header">
-          <h3>{service.name}</h3>
-          <span>{service.category}</span>
-        </div>
-        <p className="service-specialization">{service.specialization}</p>
-        <div className="employee-card-body">
-          <p><strong>Localisation :</strong> {service.location}</p>
-          <p><strong>Téléphone :</strong> +{service.phone}</p>
-          <p><strong>Note :</strong> {service.rating.toFixed(1)} / 10</p>
-        </div>
+      <div className="service-card-info">
+        <h3 className="service-card-name">{service.name}</h3>
+        <p className="service-card-price">{service.specialization}</p>
       </div>
     </Link>
   );

@@ -13,12 +13,14 @@ import Profil from "./pages/Profil"
 
 function AppContent() {
   const location = useLocation();
+  const hideNavbarRoutes = ["/", "/login", "/signup"];
+  const showNavbar = !hideNavbarRoutes.includes(location.pathname.toLowerCase());
   const hideFooterRoutes = ["/", "/login", "/signup", "/terms"];
-  const showFooter = !hideFooterRoutes.includes(location.pathname);
+  const showFooter = !hideFooterRoutes.includes(location.pathname.toLowerCase());
 
   return (
     <>
-        <NavBar />
+      {showNavbar && <NavBar />}
       <Routes>
          
         <Route path="/" element={<LogIn />} />
