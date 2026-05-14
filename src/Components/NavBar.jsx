@@ -1,5 +1,3 @@
-// Components/Navbar.jsx
-
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -32,17 +30,6 @@ export default function NavBar() {
             <NavLink to="/Profil">Profil</NavLink>
         </nav>
 
-      
-        <div className="navbar-actions">
-          <Link to="/LogIn" className="login-btn">
-            Connexion
-          </Link>
-
-          <Link to="/SignUp" className="signup-btn">
-            S’inscrire
-          </Link>
-        </div>
-
         {/* MOBILE BUTTON */}
          <button
           className="mobile-menu-btn"
@@ -74,21 +61,6 @@ export default function NavBar() {
           Contact
         </NavLink>
 
-        <Link
-          to="/LogIn"
-          className="mobile-login"
-          onClick={closeMenu}
-        >
-          Connexion
-        </Link>
-
-        <Link
-          to="/SignUp"
-          className="mobile-signup"
-          onClick={closeMenu}
-        >
-          S’inscrire
-        </Link> 
       </div>
     </header>
   );

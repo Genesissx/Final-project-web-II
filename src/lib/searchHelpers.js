@@ -21,7 +21,7 @@ function pickString(obj, ...keys) {
 
 /** Catégorie / métier (tolère les variantes de clés venant de la BDD). */
 export function getServiceCategory(service) {
-  return pickString(
+  const category = pickString(
     service,
     "category",
     "Category",
@@ -32,6 +32,28 @@ export function getServiceCategory(service) {
     "metier",
     "Metier",
   );
+  
+  // Si la catégorie n'est pas trouvée, essayer de la déduire de la spécialisation
+  if (!category) {
+    const specialization = pickString(
+      service,
+      "specialization",
+      "specialite",
+      "Specialisation",
+      "Specialization",
+    );
+    
+    // Essayer de matcher la spécialisation avec une catégorie
+    if (specialization) {
+      for (const cat of SEARCH_CATEGORIES) {
+        if (normalizeText(specialization).includes(normalizeText(cat))) {
+          return cat;
+        }
+      }
+    }
+  }
+  
+  return category;
 }
 
 export function categoriesMatch(serviceCategory, selected) {

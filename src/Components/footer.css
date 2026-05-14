@@ -1,0 +1,252 @@
+/* =============================================
+   FOOTER — Service Connect Haiti
+   Style : site web (copyright + réseaux sociaux)
+   Design system : #0f1c14 · #1a7a4a · #f5f0e8
+   ============================================= */
+
+/* ── Conteneur principal ── */
+.footer {
+  background: #0f1c14;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 0%;
+  /* pousse le footer en bas avec flexbox sur <body> ou layout */
+}
+
+/* ── Grille des 3 colonnes ── */
+.footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 40px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.4fr;
+  gap: 48px;
+}
+
+/* ═══════════════════════════════
+   COLONNE GAUCHE — Brand
+   ═══════════════════════════════ */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #1a7a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer__logo-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #f5f0e8;
+  line-height: 1.2;
+}
+
+.footer__logo-country {
+  color: #1a7a4a;
+}
+
+.footer__tagline {
+  font-size: 13.5px;
+  color: rgba(245, 240, 232, 0.5);
+  line-height: 1.7;
+  max-width: 280px;
+  margin: 0;
+}
+
+/* ═══════════════════════════════
+   COLONNE CENTRALE — Liens
+   ═══════════════════════════════ */
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__col-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.35);
+  margin: 0;
+}
+
+.footer__links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: rgba(245, 240, 232, 0.6);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.footer__link svg {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.18s, transform 0.18s;
+  flex-shrink: 0;
+  color: #1a7a4a;
+}
+
+.footer__link:hover {
+  color: #f5f0e8;
+}
+
+.footer__link:hover svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ═══════════════════════════════
+   COLONNE DROITE — Réseaux sociaux
+   ═══════════════════════════════ */
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Grille des icônes */
+.footer__social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer__social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(245, 240, 232, 0.55);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.footer__social-btn:hover {
+  background: #1a7a4a;
+  color: #ffffff;
+  border-color: #1a7a4a;
+  transform: translateY(-2px);
+}
+
+.footer__social-note {
+  font-size: 12px;
+  color: rgba(245, 240, 232, 0.35);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ═══════════════════════════════
+   BARRE COPYRIGHT
+   ═══════════════════════════════ */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer__bottom-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer__copy {
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.4);
+  margin: 0;
+}
+
+.footer__copy strong {
+  color: rgba(245, 240, 232, 0.65);
+  font-weight: 600;
+}
+
+.footer__made {
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.35);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer__heart {
+  color: #1a7a4a;
+  font-size: 14px;
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════ */
+
+/* Tablette */
+@media (max-width: 860px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    padding: 44px 32px 32px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1; /* pleine largeur */
+  }
+
+  .footer__tagline {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 540px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 36px 20px 28px;
+  }
+
+  .footer__bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 16px 20px;
+  }
+
+  .footer__copy,
+  .footer__made {
+    font-size: 12px;
+  }
+}
