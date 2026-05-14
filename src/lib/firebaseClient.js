@@ -138,6 +138,7 @@ export async function addService(service) {
     const normalized = {
       ...service,
       id: service.id || `${Date.now()}`,
+      category: service.category || service.type || 'Autre',
       rating: service.rating ?? 8.0,
       status: service.status ?? 'Disponible',
       createdAt: new Date(),

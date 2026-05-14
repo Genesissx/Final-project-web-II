@@ -232,3 +232,78 @@
 .profil-logout-btn:hover {
   background: #ffe0e0;
 }
+
+/* Mode Sombre */
+body.dark-mode {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .profil-page {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .profil-card {
+  background: #2d2d2d;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+}
+
+body.dark-mode .profil-name {
+  color: #ffffff;
+}
+
+body.dark-mode .profil-email,
+body.dark-mode .profil-stat-label,
+body.dark-mode .profil-section-title,
+body.dark-mode .profil-menu-value {
+  color: #b0b0b0;
+}
+
+body.dark-mode .profil-stat-num {
+  color: #ffffff;
+}
+
+body.dark-mode .profil-stat-divider {
+  background: #444;
+}
+
+body.dark-mode .profil-menu {
+  background: #2d2d2d;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+}
+
+body.dark-mode .profil-menu-item {
+  color: #ffffff;
+}
+
+body.dark-mode .profil-menu-left {
+  color: #ffffff;
+}
+
+body.dark-mode .profil-menu-icon {
+  background: #3d3d3d;
+}
+
+body.dark-mode .profil-menu-separator {
+  background: #3d3d3d;
+}
+
+body.dark-mode .profil-badge {
+  background: #1a4a2a;
+  border-color: #1a7a4a;
+}
+
+body.dark-mode .profil-toggle {
+  background: #555;
+}
+
+/* Message d'erreur */
+.profil-error-message {
+  background-color: #fee;
+  border: 1px solid #e53e3e;
+  color: #c53030;
+  padding: 12px 16px;
+  margin: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

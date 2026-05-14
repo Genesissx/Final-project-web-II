@@ -109,13 +109,27 @@ export default function Search() {
   }, [search, selectedCategory]);
 
   const filteredServices = useMemo(() => {
-    return services.filter((service) => {
+    console.log('Filtrage avec:', { selectedCategory, searchTerm: search, totalServices: services.length });
+    
+    const filtered = services.filter((service) => {
       const cat = getServiceCategory(service);
+      
+      // Vérifier correspondance catégorie
       const matchesCat =
         selectedCategory === "" || categoriesMatch(cat, selectedCategory);
-      if (!matchesCat) return false;
-      return matchesSearchQuery(service, search);
+      
+      if (!matchesCat) {
+        return false;
+      }
+      
+      // Vérifier correspondance recherche
+      const matches = matchesSearchQuery(service, search);
+      
+      return matches;
     });
+    
+    console.log('Services filtrés:', filtered.length);
+    return filtered;
   }, [services, search, selectedCategory]);
 
   const clearFilters = () => {
@@ -234,14 +248,18 @@ export default function Search() {
               <button
                 key={cat}
                 type="button"
-                className={selectedCategory === cat ? "active" : ""}
+                className={`search-category-btn ${selectedCategory === cat ? "active" : ""}`}
                 aria-pressed={selectedCategory === cat}
                 onClick={() => {
+                  console.log('Clic sur catégorie:', cat, 'Catégorie actuelle:', selectedCategory);
                   if (selectedCategory === cat) {
+                    // Déselectionner si déjà sélectionné
                     setSelectedCategory("");
-                  } else {
                     setSearch("");
+                  } else {
+                    // Sélectionner la nouvelle catégorie
                     setSelectedCategory(cat);
+                    setSearch(""); // Effacer la recherche quand on sélectionne une catégorie
                   }
                 }}
               >
